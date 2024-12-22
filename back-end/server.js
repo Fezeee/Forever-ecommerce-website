@@ -9,7 +9,7 @@ import cartRouer from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 
 const app = express();
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
 
