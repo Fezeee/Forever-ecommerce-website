@@ -26,6 +26,8 @@ app.get('/', (req, res)=>{
     res.send("API Working")
 })
 
+console.log(process.env.JWT_SECRET)
+
 app.listen(port, ()=>{
     console.log('Server started on PORT ' + port)
 })
