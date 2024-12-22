@@ -23,10 +23,9 @@ app.use('/api/product', productRouter);
 app.use('/api/cart', cartRouer);
 app.use('/api/order', orderRouter);
 app.get('/', (req, res)=>{
-    res.send("API Working")
+    res.send(`API Working ${process.env.JWT_SECRET}`)
 })
 
-console.log(process.env.JWT_SECRET)
 
 app.listen(port, ()=>{
     console.log('Server started on PORT ' + port)
