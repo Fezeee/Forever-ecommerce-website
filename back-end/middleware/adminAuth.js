@@ -1,6 +1,10 @@
 import jwt from 'jsonwebtoken';
 
 const adminAuth = async (req, res, next) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+        throw new Error("SECRET environment variable is not defined");
+    }
     try {
         const { token } = req.headers
         

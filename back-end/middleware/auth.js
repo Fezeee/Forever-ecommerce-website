@@ -1,6 +1,10 @@
 import jwt from 'jsonwebtoken'
  
 const authUser = async(req, res, next) => {
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+        throw new Error("SECRET environment variable is not defined");
+    }
     const { token } = req.headers
     if(!token){
         return res.json({success: false, message:"Not authorized, Login again"})
